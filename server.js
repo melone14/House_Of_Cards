@@ -1,14 +1,15 @@
-const express = require("express");
+import express from "express";
 const app = express();
 const port = process.env.PORT || 3001;
-const cors = require("cors");
+import cors from "cors";
 
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 app.use(cors());
 app.use(express.json());
 
 // SETUP DATABASE
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const URL = process.env.MONGO_URL;
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
@@ -17,7 +18,11 @@ db.once("open", () => {
   console.log("Connected with DB!");
 });
 
-const charactersRouter = require("./routes/characters");
+//SEED DB
+import { seedDB } from "./seedDB.js";
+seedDB();
+
+import charactersRouter from "./routes/characters.js";
 app.use("/characters", charactersRouter);
 
 // Heroku
