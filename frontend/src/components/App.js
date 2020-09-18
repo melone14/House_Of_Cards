@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     const fetchCharacters = async () => {
       // http://localhost:3001
-      let response = await fetch(`http://localhost:3001/characters/${query}`);
+      let response = await fetch(`/characters/${query}`);
       let data = await response.json();
       setCharacters(data);
       setIsLoading(false);
