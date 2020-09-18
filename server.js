@@ -7,6 +7,16 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+// SETUP DATABASE
+const mongoose = require("mongoose");
+const URL = process.env.MONGO_URL;
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+  console.log("Connected with DB!");
+});
+
 const charactersRouter = require("./routes/characters");
 app.use("/characters", charactersRouter);
 
