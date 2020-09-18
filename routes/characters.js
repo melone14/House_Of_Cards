@@ -1,8 +1,11 @@
 import express from "express";
 const router = express.Router();
+import Character from "../models/Character.js";
 
 router.get("/", (req, res) => {
-  res.send("Here the actors will come");
+  Character.find()
+    .then((characters) => res.json(characters))
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/:name").get((req, res) => {
