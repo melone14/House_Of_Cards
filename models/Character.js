@@ -7,6 +7,7 @@ const characterSchema = new mongoose.Schema({
   isFemale: Boolean,
   filmweb_link: String,
   seasons: String,
+  numOfEpisodes: Number,
 });
 
 export default mongoose.model("Character", characterSchema);

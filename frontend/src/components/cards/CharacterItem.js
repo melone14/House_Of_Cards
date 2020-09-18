@@ -106,7 +106,8 @@ const CharacterItem = ({ character }) => {
               {character.seasons}
             </li>
             <li>
-              <strong>Something: </strong>something
+              <strong>Number of episodes: </strong>
+              {character.numOfEpisodes}
             </li>
           </ul>
           <FilmwebBtn

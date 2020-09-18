@@ -19,8 +19,8 @@ db.once("open", () => {
 });
 
 //SEED DB
-import { seedDB } from "./seedDB.js";
-seedDB();
+// import { seedDB } from "./seedDB.js";
+// seedDB();
 
 import charactersRouter from "./routes/characters.js";
 app.use("/characters", charactersRouter);
