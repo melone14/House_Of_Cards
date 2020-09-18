@@ -9,7 +9,17 @@ router.get("/", (req, res) => {
 });
 
 router.route("/:name").get((req, res) => {
-  res.send("Filtered actors will appear here");
+  let allCharacters = [];
+  const inputText = req.params.name.toLowerCase();
+
+  Character.find()
+    .then((characters) => {
+      allCharacters = characters.filter((character) =>
+        character.name.toLowerCase().includes(inputText)
+      );
+      return res.json(allCharacters);
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 export default router;
