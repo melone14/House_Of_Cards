@@ -14,19 +14,19 @@ html {
       from(rgba(24, 22, 22, 0.01)),
       to(rgba(0, 0, 0, 0.3))
     ),
-    #000 url("./images/bg-dc.jpg") no-repeat center top/cover;
+    #000 url("./images/bg-dc.jpg") center/cover no-repeat border-box;
   background: -o-linear-gradient(
       top,
       rgba(24, 22, 22, 0.01),
       rgba(0, 0, 0, 0.3)
     ),
-    #000 url("./images/bg-dc.jpg") no-repeat center top/cover;
+    #000 url("./images/bg-dc.jpg") center/cover no-repeat border-box;
   background: linear-gradient(
       to bottom,
       rgba(24, 22, 22, 0.01),
       rgba(0, 0, 0, 0.3)
     ),
-    #000 url("./images/bg-dc.jpg") no-repeat center top/cover;
+    #000 url("./images/bg-dc.jpg") center/cover no-repeat border-box;
   background-attachment: fixed;
   height: 100vh;
   color: #fff;
